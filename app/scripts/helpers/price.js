@@ -1,3 +1,3 @@
-Ember.Handlebars.helper('format-price', function(price, quantity) {
-  return (price * quantity) / 100
+Ember.Handlebars.helper('format-price', function(price) {
+  return parseFloat(price)/100
 });

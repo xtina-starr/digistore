@@ -6,6 +6,17 @@ App.CartRoute = Ember.Route.extend({
 
     less: function (item) {
       item.decrementProperty("quantity");
+    },
+
+    removeItem: function (item) {
+      this.store.find("cart", 1).then(function (cart){
+       
+        cart.get("items").then(function (items) {
+          items.removeObject(item);
+        })
+
+        item.deleteRecord();
+      });
     }
   },
    model: function () {

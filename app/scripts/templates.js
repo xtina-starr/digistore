@@ -15,7 +15,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 Ember.TEMPLATES["cart"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+  var buffer = '', stack1, helper, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
 
 function program1(depth0,data) {
   
@@ -33,16 +33,20 @@ function program1(depth0,data) {
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "more", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
   data.buffer.push(" >+</button><button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "less", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push(" >-</button></td>\n      <td class=\"item-subtotal\">");
-  data.buffer.push(escapeExpression((helper = helpers['format-price'] || (depth0 && depth0['format-price']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data},helper ? helper.call(depth0, "product.price", "quantity", options) : helperMissing.call(depth0, "format-price", "product.price", "quantity", options))));
-  data.buffer.push("</td>\n    </tr>\n    ");
+  data.buffer.push(" >-</button></td>\n      <td class=\"item-subtotal\">$");
+  data.buffer.push(escapeExpression((helper = helpers['format-price'] || (depth0 && depth0['format-price']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "subtotal", options) : helperMissing.call(depth0, "format-price", "subtotal", options))));
+  data.buffer.push("</td>\n      <td><button type=\"button\" class=\"btn btn-danger\"");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "removeItem", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push(">Remove</button></td>\n    </tr>\n    ");
   return buffer;
   }
 
-  data.buffer.push("<h1>Cart</h1>\n\n  <table class=\"table table-striped\">\n    <tr>\n      <th>Tunes</th>\n      <th>Quantity</th>\n      <th>Price</th>\n    </tr>\n    ");
+  data.buffer.push("<h1>Cart</h1>\n\n  <table class=\"table table-striped\">\n    <tr>\n      <th>Tunes</th>\n      <th>Quantity</th>\n      <th>Price</th>\n      <th></th>\n    </tr>\n    ");
   stack1 = helpers.each.call(depth0, "items", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n    <tr>\n      <th>Total</th>\n      <th>Blank</th>\n      <th>13.90</th>\n    </tr>\n  </table>\n  \n");
+  data.buffer.push("\n    <tr>\n      <th>Total</th>\n      <th>Blank</th>\n      <th>$");
+  data.buffer.push(escapeExpression((helper = helpers['format-price'] || (depth0 && depth0['format-price']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "total", options) : helperMissing.call(depth0, "format-price", "total", options))));
+  data.buffer.push("</th>\n      <th></th>\n    </tr>\n  </table>\n  \n");
   return buffer;
   
 });
