@@ -10,7 +10,7 @@
     <tr>
       <td>{{ product.title }} by {{ product.artist }}</td>
       <td>{{ quantity }}<button {{ action "more" this}} >+</button><button {{ action "less" this}} >-</button></td>
-      <td class="item-subtotal">{{ format-price this.product.price quantity }}</td>
+      <td class="item-subtotal">{{ format-price product.price quantity }}</td>
     </tr>
     {{/each}}
     <tr>
