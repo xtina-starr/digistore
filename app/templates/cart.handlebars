@@ -1,2 +1,22 @@
 <h1>Cart</h1>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Tunes</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    {{#each items}}
+    <tr>
+      <td>{{ product.title }} by {{ product.artist }}</td>
+      <td>{{ quantity }}</td>
+      <td>{{ format-price product.price }}</td>
+    </tr>
+    {{/each}}
+    <tr>
+      <th>Total</th>
+      <th>Blank</th>
+      <th>13.90</th>
+    </tr>
+  </table>
   
