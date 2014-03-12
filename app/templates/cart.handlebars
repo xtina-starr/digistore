@@ -9,8 +9,8 @@
     {{#each items}}
     <tr>
       <td>{{ product.title }} by {{ product.artist }}</td>
-      <td>{{ quantity }}</td>
-      <td>{{ format-price product.price }}</td>
+      <td>{{ quantity }}<button {{ action "more" this}} >+</button><button {{ action "less" this}} >-</button></td>
+      <td class="item-subtotal">{{ format-price this.product.price quantity }}</td>
     </tr>
     {{/each}}
     <tr>
