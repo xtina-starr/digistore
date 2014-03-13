@@ -6,8 +6,10 @@
       {{# each }}
         <li>
           {{# link-to "product" this }}
-            {{ title }}
+          {{ title }}
           {{/ link-to }}
+          ${{ format-price price }}
+          <img {{ bind-attr src=image }} style="width: 80px; height:80px;" class='thumbnail'/>
         </li>
       {{/ each }}
     </ul>
