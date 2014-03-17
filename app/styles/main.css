@@ -9,3 +9,7 @@ nav ul li {
   font-size: 20px;
   color: navy;
 }
+
+h1.order-form {
+  text-align: center;
+}
