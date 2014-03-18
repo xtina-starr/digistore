@@ -5,9 +5,16 @@ App.OrdersRoute = Ember.Route.extend({
       this.store.find('cart', 1).then(function (cart) {
         order.set('cart', cart)
       })
-
-      order.save();
-      this.transitionTo("confirmation", order)
+      var self = this
+      order.save().then(
+        function (order) {
+          self.transitionTo("confirmation", order)
+        },
+        function (error) {
+          order.deleteRecord();
+          alert("Your order could not be processed.")
+        }
+      ) 
     }
   },
   model: function () {
