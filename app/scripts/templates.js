@@ -13,7 +13,7 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<h1>Admin Dashboard</h1>\n");
+  data.buffer.push("<h1>Admin Dashboard</h1>\n<button>Create a product</button>\n");
   stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   return buffer;
