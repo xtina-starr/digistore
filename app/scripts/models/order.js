@@ -5,7 +5,7 @@ App.Order = DS.Model.extend({
   credit_card: DS.attr("number"),
   cvv: DS.attr("number"),
   expiration_date: DS.attr("number"),
-  status: DS.attr("boolean"),
+  status: DS.attr("string"),
   cart: DS.belongsTo("cart", {async: true})
 })
 
@@ -16,7 +16,7 @@ App.Order.FIXTURES = [{
   email: "ada@lovelace.com",
   credit_card: 123456789,
   cvv: 123,
-  expiration_date: 112018,
-  status: true,
+  exp: 112018,
+  status: "paid",
   cart: 1
 }]
