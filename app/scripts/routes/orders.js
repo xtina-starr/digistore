@@ -6,11 +6,9 @@ App.OrdersRoute = Ember.Route.extend({
         order.set('cart', cart)
       })
       var self = this
-      order.save().then(
-        function (order) {
+      order.save().then(function (order) {
           self.transitionTo("confirmation", order)
-        },
-        function (error) {
+        }, function (error) {
           order.deleteRecord();
           alert("Your order could not be processed.")
         }
