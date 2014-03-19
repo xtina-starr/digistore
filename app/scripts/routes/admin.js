@@ -1,7 +1,7 @@
 App.AdminRoute = Ember.Route.extend({
   actions: {
-    createProduct: function (proxy) {
-      var product = this.store.createRecord("product", proxy)
+    deleteProduct: function(product) {
+      product.deleteRecord();
       product.save();
     }
   },
