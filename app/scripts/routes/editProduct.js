@@ -1,8 +1,9 @@
 App.EditProductRoute = Ember.Route.extend({
   actions: {
     updateProduct: function (product) {
+      var self = this
       product.save().then(function (product) {
-        transitionTo("admin", product)
+        self.transitionTo("admin")
       })
     }
   },
