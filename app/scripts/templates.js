@@ -237,7 +237,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(" \n  <small class='muted'>(");
   stack1 = helpers._triageMustache.call(depth0, "artist", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push(" artist)</small>\n</h1>\n\n<div class='row'>\n  <div class='col-md-8'>\n    <img ");
+  data.buffer.push(")</small>\n</h1>\n\n<div class='row'>\n  <div class='col-md-8'>\n    <img ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'src': ("image")
   },hashTypes:{'src': "ID"},hashContexts:{'src': depth0},contexts:[],types:[],data:data})));
