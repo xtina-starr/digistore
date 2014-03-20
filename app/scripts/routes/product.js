@@ -2,7 +2,7 @@ App.ProductRoute = Ember.Route.extend({
   actions: {
     addToCart: function (product) {
       var store = this.store;
-      this.store.find("cart", 1).then(function (cart){
+      this.store.find("cart", localStorage.cartId).then(function (cart){
         var item = store.createRecord("item", {
           quantity: 1,
           current_price: product.get("price"),

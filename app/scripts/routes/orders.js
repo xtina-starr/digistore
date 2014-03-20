@@ -2,7 +2,7 @@ App.OrdersRoute = Ember.Route.extend({
   actions: {
     checkout: function(proxy) {
       var order = this.store.createRecord("order", proxy);
-      this.store.find('cart', 1).then(function (cart) {
+      this.store.find('cart', localStorage.cartId).then(function (cart) {
         order.set('cart', cart)
       })
       var self = this
