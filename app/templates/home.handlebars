@@ -4,7 +4,7 @@
 
 <div class="row">
   {{#each}}
-  <div class="col-md-4"><div class="song">{{image}}</div></div>
+  <div class="col-md-4"><div class="song"><img {{ bind-attr src=image }} style="width: 200px; height: 200px;"/></div></div>
   {{/each}}
   <!-- <div class="col-md-4"><div class="song"></div></div>
   <div class="col-md-4"><div class="song"></div></div> -->
