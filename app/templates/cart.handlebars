@@ -1,0 +1,25 @@
+<h1>Cart</h1>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Tunes</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+    {{#each items}}
+    <tr>
+      <td>{{ product.title }} by {{ product.artist }}</td>
+      <td>{{ quantity }}<button {{ action "more" this}} >+</button><button {{ action "less" this}} >-</button></td>
+      <td class="item-subtotal">${{format-price subtotal }}</td>
+      <td><button type="button" class="btn btn-danger"{{action "removeItem" this}}>Remove</button></td>
+    </tr>
+    {{/each}}
+    <tr>
+      <th>Total</th>
+      <th>Blank</th>
+      <th>${{format-price total}}</th>
+      <th>{{#link-to "orders"}}Check out{{/link-to}}</th>
+    </tr>
+  </table>
+  

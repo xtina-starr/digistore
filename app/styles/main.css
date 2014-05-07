@@ -1,0 +1,21 @@
+a.logo:hover {
+  text-decoration: none;
+}
+
+nav ul li {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 20px;
+  font-size: 20px;
+  color: navy;
+}
+
+h1.form, h3.form {
+  text-align: center;
+}
+
+div.song {
+  width: 200px;
+  height: 200px;
+  background-color: #DEDEDE;
+}
